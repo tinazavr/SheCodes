@@ -1,0 +1,74 @@
+body {
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 10px;
+}
+
+.header-stiker {
+  font-size: 34px;
+}
+h1 {
+  color: #1a64d6;
+  font-size: 34px;
+  line-height: 48px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-weight: normal;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  line-height: 40px;
+  font-size: 34px;
+}
+.day-temperature {
+  font-weight: bold;
+}
+ul {
+  padding: 0;
+  text-decoration: 0;
+}
+li {
+  /* margin: 30px 200px; */
+  list-style: none;
+  /* font-size: 16px; */
+  font-weight: 100;
+  padding: 12px 0px;
+  max-width: 400px;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+li:hover {
+  background-color: #fffbef;
+}
+.change-city-button {
+  margin: 30px auto;
+}
+.change-city-button a {
+  text-decoration: none;
+  background-color: #1a64d6;
+  color: #fff;
+  font-size: 16px;
+  padding: 16px 25px;
+  border-radius: 30px;
+  line-height: 30px;
+  transition: all 200ms ease-in-out;
+  box-shadow: 1px 6px 10px rgba(37, 39, 89, 0.3);
+  border: 1px solid #1a64d6;
+}
+a:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #1a64d6;
+  border: 1px solid #1a64d6;
+}
+footer {
+  /* margin: 50px; */
+  /* font-size: 18px; */
+  font-weight: normal;
+}
+.accent-font {
+  font-family: monospace;
+  opacity: 0.7;
+  font-size: 18px;
+}
