@@ -10,6 +10,11 @@
     <title>Homework Week 1</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
+
+  <!-- 
+        The page that given to me as a sample
+        https://www.shecodes.io/demos/html_css
+   -->
   <body>
     <header>
       <div class="header-stiker">🌩</div>
@@ -38,13 +43,35 @@
         </li>
       </ul>
       <div class="change-city-button">
-        <a href="https://wwww.shecodes.io/cities" targer="_blank">
-          Change city
-        </a>
+        <a class="button" href="#"> Change city </a>
       </div>
     </main>
     <footer>
       <div class="accent-font">Coded by Anastasiia Zavorotynska</div>
     </footer>
+    <script>
+      function getStiker(temperatureNew) {
+        if (temperatureNew >= 30) {
+          return `🥵`;
+        }
+        if (temperatureNew >= 5) {
+          return `🥰`;
+        }
+        return `🥶`;
+      }
+
+      function changeCity() {
+        let newCityName = prompt("Enter the name of city:");
+        let temperatureNew = prompt("Enter the temperature in this city:");
+        let heading = document.querySelector("h1");
+        let stiker = document.querySelector(".header-stiker");
+        stiker.innerHTML = getStiker(temperatureNew);
+        heading.innerHTML = `Currently ${temperatureNew}° in ${newCityName}`;
+      }
+
+      let button = document.querySelector("a.button");
+
+      button.addEventListener("click", changeCity);
+    </script>
   </body>
 </html>

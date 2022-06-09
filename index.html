@@ -95,9 +95,7 @@
     <h1>SheCodes</h1>
     <h2>Coding Workshop</h2>
     <div class="button-div">
-      <a class="button" href="https://www.shecodes.io" target="_blank"
-        >Apply now</a
-      >
+      <a class="button" href="#">Apply now</a>
     </div>
     <ul>
       <li>
@@ -135,5 +133,95 @@
       <span class="contact-platform">Email:</span> hello@shecodes.io
       <span class="contact-platform">Instagram:</span> @shecodes.io
     </div>
+    <script>
+              /*      function apply() {
+                      let name = prompt("Your name?");
+                      let age = prompt("Your age?");
+                      let header = document.querySelector("h1");
+
+                      if (age >= 18) {
+                        header.innerHTML = "welcome" + name;
+                      } else {
+                        header.innerHTML = "sorry" + name + "you cannot";
+                      }
+                    }
+                    let button = document.querySelector('a.button');
+
+                    button.addEventListener("click", apply);
+------------------------*/
+      function editHeading(newHeading){
+        let heading = document.querySelector('h1');
+        heading.innerHTML = newHeading;
+      }
+      function canApply(){
+        let age = prompt("What is your age?");
+
+      if(age>=18){
+        return true;
+      }else 
+      return false;
+      }
+
+      function applyNow() {
+        let name = prompt("What is your name?");
+        if (canApply()) {
+          editHeading(`Hi, ${name}! Welcome to SheCodes!`);
+        } else {
+          editHeading(`Sorry, ${name}! You cannot join SheCodes 😞`);
+        }
+      }
+      let button = document.querySelector("a.button");
+
+      button.addEventListener("click", applyNow);
+      /*
+      ------
+      function canSpeakPortuguese() {
+        let country = prompt("What is your country?");
+        country = country.toLocaleLowerCase().trim();
+        if (
+          country === "brazil" ||
+          country === "brasil" ||
+          country === "portugal"
+        ) {
+          alert("You speak Portuguese");
+        } else {
+          alert("Go learn Portuguese!");
+        }
+      }
+      canSpeakPortuguese();
+      ------------
+      let country = prompt('What country are you from?');
+             country = country.toLowerCase().trim();
+
+            if(country === 'brazil' || country === 'portugal'){
+              alert('You speak Portuguese');
+            }else{
+              alert('You don`t speak Portuguese')
+            }
+            -------
+                let currentHour = prompt('What`s current hour?');
+                  if (currentHour <= 12){
+                    alert('Good morning');
+                  }else if(currentHour >= 18){
+                    alert('Good evening');
+                  }else{
+                    alert('Good afternoon');
+                  }
+            ---------
+                  let age = prompt("How old are you?");
+                  if (age >= 18) {
+                    alert("You can apply to SheCodes");
+                  }
+                  if (age < 18) {
+                    alert("You cannot apply");
+                  }
+                  let hometown = prompt("What is your hometown?");
+                    let alertHometown = alert("Your hometown is " + hometown);
+            --------
+                    let name = prompt("What is your name?");
+                    let lastName = prompt("What is your last name?");
+                    let fullName = alert("Your full name is " + name + ' ' + lastName);
+                  */
+    </script>
   </body>
 </html>

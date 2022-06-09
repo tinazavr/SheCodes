@@ -1,0 +1,229 @@
+body {
+  background: linear-gradient(
+    0deg,
+    rgba(247, 217, 71, 0.9374124649859944) 29%,
+    rgba(100, 134, 245, 0.96) 100%
+  );
+  font-family: "Courier New", Courier, monospace;
+}
+.container-page-box {
+  max-width: 600px;
+  color: black;
+  background-color: rgb(253, 252, 237);
+  margin: 20px auto;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 600px;
+  margin: 5px auto 30px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-shadow: 1px 1px 5px rgba(128, 128, 0, 0.5);
+  color: darkolivegreen;
+  font-size: 33px;
+}
+.container:first-child {
+  margin-bottom: 0px;
+}
+nav {
+  min-height: 64px;
+  margin: 0 10px;
+  border-bottom: 1px solid rgba(85, 107, 47, 0.432);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 1px 1px 1px rgba(30, 124, 27, 0.548);
+}
+
+nav li {
+  float: left;
+  padding: 15px 20px;
+  font-size: 18px;
+}
+ul li {
+  text-decoration: none;
+  list-style-type: none;
+}
+section a:hover,
+nav a:hover {
+  font-size: 120%;
+}
+
+/* main section */
+hr {
+  background-color: darkolivegreen;
+  margin: 0 auto;
+  opacity: 0.6;
+  max-width: 40%;
+}
+h3 {
+  margin: 30px 10px 20px;
+  font-weight: lighter;
+  font-size: 26px;
+  text-align: center;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(85, 107, 47, 0.432);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  box-shadow: 1px -1px 1px rgba(30, 124, 27, 0.781);
+}
+
+h3:first-child {
+  margin-top: 0px;
+}
+
+section .food-photo {
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 80%;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+button {
+  display: block;
+  padding: 20px 30px;
+  margin: 0 auto 15px;
+}
+.description-cuisine,
+.about-cuisine {
+  padding: 15px 30px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.about-cuisine a,
+.about-us a {
+  color: darkolivegreen;
+  font-weight: bold;
+}
+.about-cuisine a:hover,
+.about-us a:hover {
+  text-decoration: underline;
+  font-size: 101%;
+}
+.buy-button {
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: darkolivegreen;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: all 200ms ease-in-out;
+}
+.buy-button:hover {
+  background-color: white;
+  color: darkolivegreen;
+  opacity: 0.9;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+/* ABOUT US */
+.about-us {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.about-us p,
+form {
+  padding: 5px 30px;
+  margin-bottom: 5px;
+}
+
+.about-us img {
+  box-shadow: none;
+  padding: 0 30px;
+  opacity: 0.7;
+}
+
+.about-us img:hover {
+  opacity: 1;
+}
+
+.social-media-container li {
+  float: left;
+}
+.required {
+}
+/* FORM */
+
+input[type="submit"] {
+  padding: 10px 25px;
+  background-color: darkolivegreen;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+  border: none;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 200ms ease-in-out;
+}
+input[type="submit"]:hover {
+  background-color: white;
+  color: darkolivegreen;
+  opacity: 0.9;
+}
+
+input[type="text"],
+input[type="textarea"] {
+  border-color: darkolivegreen;
+  opacity: 0.5;
+  border-radius: 4px;
+  padding: 6px 22px;
+  font-size: 16px;
+  box-shadow: 1px 1px 3px rgba(85, 107, 47, 0.5);
+}
+input[type="textarea"] {
+  padding: 15px 20px;
+  margin-bottom: 5px;
+}
+
+span.required {
+  color: darkred;
+  font-weight: bold;
+}
+input {
+  margin-bottom: 12px;
+}
+form + p {
+  margin-top: 0;
+}
+/* ------------ */
+
+div .social-media-container ul {
+  display: flex;
+  justify-content: center;
+  /* display: block;
+margin: 0 0.5em; */
+  padding-left: 0;
+}
+
+b {
+  color: darkolivegreen;
+}
+/* FOOTER */
+
+footer {
+  text-align: center;
+  margin-top: 23px;
+}
+.footer-link,
+.learn-more {
+  color: blue;
+}
+.footer-link:visited,
+.learn-more:visited {
+  color: blueviolet;
+}
