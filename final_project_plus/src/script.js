@@ -42,10 +42,16 @@ let weather = [
 ];
 
 function askCity() {
-  let cityName = prompt("Enter a city:");
+  let cityName = prompt(`Enter a city: (It is can be only one of this cities: ${showCities(weather)}`);
   checkCityName(cityName);
 }
 askCity();
+
+function showCities(weather){
+    let listOfCities =  weather.map((city) => city.name).join(', ');
+    return listOfCities;
+}
+
 
 function checkCityName(cityName) {
   if (cityName.length >= 2 && isNaN(cityName)) {
@@ -62,7 +68,7 @@ function checkCityName(cityName) {
 
 function findIn(cityName) {
   for (let i = 0; i < weather.length; i++) {
-    if (cityName === weather[i].name) {
+    if (cityName.toLowerCase() === weather[i].name.toLowerCase()) {
       let userCity = weather[i];
       //  console.log(userCity);
       roundedTemp(userCity);
@@ -89,3 +95,4 @@ function showLink(cityName) {
     `Sorry, we don't know the weather for ${cityName} city, try going to https://www.google.com/search?q=weather+${cityName}.`
   );
 }
+
