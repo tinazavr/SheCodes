@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Events</h1>
+    <button class="temperature-button">Show Temperature</button>
+
+    <script src="src/index.js"></script>
+    <script>
+                function isWindy(speed, unit) {
+                return speed > 5 && unit === "metric";
+                }
+                let speed = prompt("Is windy?");
+                let unit = prompt("unit?");
+                if (isWindy(speed, unit)) {
+                alert("It is windy");
+                } else alert("It is not windy");
+
+                console.log(new Date());
+                let day = now.getDay();
+                console.log(day);
+                let month = now.getMonth();
+                let year = now.getFullYear();
+                let minutes = now.getMinutes();
+
+
+                let currentTime = new Date()
+                let dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                let day = dayOfWeek[currentTime.getDay()];
+
+                let monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                'October', 'November', 'December'];
+                let month = monthArray[currentTime.getMonth(§)];
+                let date = currentTime.getDate();
+                let year = currentTime.getFullYear();
+                console.log(`Today is ${day}, ${month} ${date}, ${year}`);
+
+
+                function getDate(){
+
+                }
+
+                function formatDate(){
+                    let dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    let day = dayOfWeek[now.getDay()];
+
+                    let monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                    'October', 'November', 'December'];
+                    let month = monthArray[now.getMonth()];
+                    let date = now.getDate();
+                    let year = now.getFullYear();
+                    console.log(`Today is ${day}, ${month} ${date}, ${year}`);
+                    return (`${day}, ${month} ${date}, ${year}`);
+                }
+
+                    /*
+                          JS Challenge 6
+                          Display the current date following the following format: Today is Thursday, April 4, 2020
+
+                          JS Challenge 7
+                          Create a function formatDate which returns a date following this format: Thursday, April 4, 2020
+                          Call this function with the current time Log the result such as console.log(formatDate(new Date()));
+
+                          -------------
+                          */
+
+
+
+
+
+
+
+
+            // Challenge 1
+            // Add click eventListener to the button.
+            //Alert `It is 18 degrees`
+            let button = document.querySelector("button.temperature-button");
+            button.addEventListener("click", editName);
+
+            // Challenge 2
+            // When the button is clicked, replace
+            //button label by ‘18 degrees’
+            function editName(event) {
+              event.preventDefault();
+
+              let button = document.querySelector("button.temperature-button");
+              button.innerHTML = "18 degrees";
+            }
+
+
+
+
+
+            //1
+            //When clicking this button, alert "Hooray!"
+      let specialButton = document.querySelector("#special-button");
+      specialButton.addEventListener("click", hooray);
+
+      function hooray(event) {
+        event.preventDefault();
+        let specialButton = document.querySelector("#special-button");
+        specialButton.innerHTML = "Hooooray!";
+        alert("Hooray!");
+      }
+
+
+            //2
+            //When submitting the form, alert the value of the password input
+
+      let passwordForm = document.querySelector("#password-form");
+      passwordForm.addEventListener("submit", showPassword);
+
+      function showPassword(event) {
+        event.preventDefault();
+        let passwordInput = document.querySelector("#password-input");
+        alert(`Your password is ${passwordInput.value}`);
+      }
+            //3
+            //When submitting the form, alert the value of the username and email inputs
+
+      let signUpForm = document.querySelector('#signup-form');
+      signUpForm.addEventListener('submit', alertParameters);
+
+
+      function alertParameters(event){
+        event.preventDefault();
+        let usernameInput = document.querySelector('#username-input');
+        let emailInput = document.querySelector('#email-input');
+        let message = `Your username is: ${usernameInput.value} 👩‍💻. Your e-mail is: ${emailInput.value}`;
+        alert(message);
+      }
+    </script>
+  </body>
+</html>

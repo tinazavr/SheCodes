@@ -53,13 +53,13 @@
       <main class="main-container"></main>
 
       <section class="search-section">
-        <form>
+        <form id='change-city-form'>
           <div class="row">
             <div class="mb-3 col-7">
               <input
                 type="text"
                 class="form-control shadow-lg p-3 mb-5 bg-body rounded"
-                id="exampleInputEmail1"
+                id="city-input"
                 aria-describedby="emailHelp"
                 placeholder="The weather in which city you would like to know?"
               />
@@ -79,21 +79,27 @@
       <section>
         <div class="row">
           <div
-            class="col-5 shadow-lg p-3 mb-5 bg-body rounded local-temperature"
+            class="col-6 shadow-lg p-3 mb-5 bg-body rounded local-temperature"
           >
             <h1>Dniprorudne</h1>
-            <h3>Thusday, 14/06/2022</h3>
+            <h2>Thusday, 14 Jun, 14:33 <span class="current-time"></span></h2>
             <div class="row">
               <div class="col-6">
-                <h3>18 &#8451; / <a class="converter-link" href="#">&#8457;</a></h3>
+                <h3> <span id='degrees'>
+                   </span> <a class="converter-link" id='degrees-celsius' href="#">&#8451;</a> / <a class="converter-link" id='degrees-fahrenheit' href="#">&#8457;</a>
+                </h3>
               </div>
-              <div class="col-6 main-stiker-icon">
-                <img src="img/partly_cloudy.png" alt="Partly_cloudy icon" width="120px" />
+              <div class="col-6" id='main-stiker-icon'>
+                <img
+                  src="img/partly_cloudy.png"
+                  alt="Partly_cloudy icon"
+                  width="120px"
+                />
               </div>
             </div>
           </div>
           <div
-            class="col-5 shadow-lg p-3 mb-5 bg-body rounded local-parameters"
+            class="col-4 shadow-lg p-3 mb-5 bg-body rounded local-parameters"
           >
             <h5>Precipitation: 20%</h5>
             <h5>Wind: 8 km/h</h5>
@@ -107,7 +113,11 @@
             Monday
             <h5>16 &#176;</h5>
             <div class="week-stiker">
-              <img src="img/rain_light.png" alt="Rain light icon" width="60px" />
+              <img
+                src="img/rain_light.png"
+                alt="Rain light icon"
+                width="60px"
+              />
             </div>
           </div>
           <div class="col-2">
@@ -125,12 +135,20 @@
           <div class="col-2">
             Thursday
             <h5>20 &#176;</h5>
-            <img src="img/partly_cloudy.png" alt="Partly cloudy icon" width="60px" />
+            <img
+              src="img/partly_cloudy.png"
+              alt="Partly cloudy icon"
+              width="60px"
+            />
           </div>
           <div class="col-2">
             Friday
             <h5>18 &#176;</h5>
-            <img src="img/showers_with_thunderstorms.png" alt="Showers with thunderstorms icon" width="60px" />
+            <img
+              src="img/showers_with_thunderstorms.png"
+              alt="Showers with thunderstorms icon"
+              width="60px"
+            />
           </div>
           <!-- <div class="col-2">
             Saturday
@@ -141,7 +159,6 @@
       </section>
       <footer class="footer-container"></footer>
     </div>
-    <script src="src/script.js">
-    </script>
+    <script src="src/script.js"></script>
   </body>
 </html>
