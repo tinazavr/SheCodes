@@ -19,6 +19,8 @@
       href="https://fonts.googleapis.com/css2?family=Della+Respira&family=Poppins:wght@100;200&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <link href="src/style.css" rel="stylesheet" type="text/css" />
     <script
       src="https://kit.fontawesome.com/20d33d5985.js"
@@ -30,7 +32,7 @@
       <header class="header-container">
         <ul class="nav-menu">
           <li>
-            <a href="#" class="nav-cities">Pasadena</a>
+            <a href="#" class="nav-cities" id="nav-city-1">Mariupol</a>
           </li>
           <li>
             <a href="#" class="nav-cities">Kyiv</a>
@@ -53,7 +55,7 @@
       <main class="main-container"></main>
 
       <section class="search-section">
-        <form id='change-city-form'>
+        <form id="change-city-form">
           <div class="row">
             <div class="mb-3 col-7">
               <input
@@ -64,12 +66,20 @@
                 placeholder="The weather in which city you would like to know?"
               />
             </div>
-            <div class="col-3">
+            <div class="col-2 searct-button">
               <button
                 type="submit"
                 class="btn btn-light search-button shadow-lg p-3 mb-5 bg-body rounded"
               >
                 Search
+              </button>
+            </div>
+            <div class="col-3">
+              <button id="current-location-button"
+                type="submit"
+                class="btn btn-light search-button shadow-lg p-3 mb-5 bg-body rounded"
+              >
+                Current location
               </button>
             </div>
           </div>
@@ -85,11 +95,18 @@
             <h2>Thusday, 14 Jun, 14:33 <span class="current-time"></span></h2>
             <div class="row">
               <div class="col-6">
-                <h3> <span id='degrees'>
-                   </span> <a class="converter-link" id='degrees-celsius' href="#">&#8451;</a> / <a class="converter-link" id='degrees-fahrenheit' href="#">&#8457;</a>
+                <h3>
+                  <span id="degrees">--</span>
+                  <a class="converter-link" id="degrees-celsius" href="#"
+                    >&#8451;</a
+                  >
+                  /
+                  <a class="converter-link" id="degrees-fahrenheit" href="#"
+                    >&#8457;</a
+                  >
                 </h3>
               </div>
-              <div class="col-6" id='main-stiker-icon'>
+              <div class="col-6" id="main-stiker-icon">
                 <img
                   src="img/partly_cloudy.png"
                   alt="Partly_cloudy icon"
@@ -101,15 +118,17 @@
           <div
             class="col-4 shadow-lg p-3 mb-5 bg-body rounded local-parameters"
           >
-            <h5>Precipitation: 20%</h5>
-            <h5>Wind: 8 km/h</h5>
-            <h5>Humidity: 72%</h5>
+            <h5 id="precipitation"></h5>
+            <h5 id="wind">Wind: -- km/h</h5>
+            <h5 id="humidity">Humidity: --%</h5>
+            <h5 id="feels-like">Feels like: --&#8451;</h5>
+            <h5 id="description">--</h5>
           </div>
         </div>
       </section>
       <section>
         <div class="row week-weather">
-          <div class="col-2">
+          <div class="col-2" id="day1">
             Monday
             <h5>16 &#176;</h5>
             <div class="week-stiker">

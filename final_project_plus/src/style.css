@@ -161,4 +161,10 @@ input[type="text"] {
 .week-stiker-icon {
 }
 
-
+#description{
+  text-transform: capitalize;
+}
+.searct-button{
+  height: 112px;
+    width: 90px;
+}

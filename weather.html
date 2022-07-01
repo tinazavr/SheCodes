@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SheCodes Plus</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 0 20px;
+      }
+
+      h1 {
+        text-align: center;
+        font-weight: 900;
+        margin: 0;
+        font-size: 34px;
+        line-height: 48px;
+      }
+
+      h1 h2,
+      h3 {
+        color: #231d3c;
+      }
+
+      .logo {
+        display: block;
+        margin: 30px auto;
+        width: 150px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <h1>JavaScript Open Weather API</h1>
+    <h2>something</h2>
+    <h3>JS Challenge 1</h3>
+    <p>Import Axios</p>
+
+    <h3>JS Challenge 2</h3>
+    <p>Get your API key and save in a variable called apiKey</p>
+
+    <h3>JS Challenge 3</h3>
+    <p>Get the API response for the weather in Sydney, using metrics unit</p>
+
+    <h3>JS Challenge 4</h3>
+    <p>Log the current temperature in Sydney</p>
+
+    <h3>JS Challenge 5</h3>
+    <p>
+      Replace the h1 of this page with the weather in Sydney: i.e: It is 19
+      degrees in Sydney
+    </p>
+    <button>current position</button>
+
+    <script>
+      //   let button = document.querySelector("button");
+      //   button.addEventListener("click", getPosition);
+
+      //
+
+      function displayWeather(response){
+        let temperature = Math.round(response.data.main.temp);
+        let h2 = document.querySelector("h2");
+        h2.innerHTML = `In your location ${temperature}°C in ${response.data.name}`;
+      }
+      function getPos(position) {
+        let lon = position.coords.longitude;
+        let lat = position.coords.latitude;
+        let units = "metric";
+        let apiKey = `80837f7b81708cf27e6991c6119a6e84`;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+        axios.get(apiUrl).then(displayWeather);
+
+        //console.log(apiUrl);
+        // axios.get(apiByLocation).then(showWeather);
+        // showPosition(lat, lon);
+        // getWeather(response);
+      }
+
+      navigator.geolocation.getCurrentPosition(getPos);
+
+      /*function showPosition(lat, lon) {
+        let h1 = document.querySelector("h1");
+        h1.innerHTML = `Hi, your position is ${lon} and ${lat}`;
+      }
+*/
+      function getWeather(response) {
+        let h2 = document.querySelector("h2");
+        let temperature = Math.round(response.data.main.temp);
+        h2.innerHTML = `In your location ${temperature}`;
+      }
+
+      /*let cityName = prompt("What is your city?");
+      //   let cityName = "Lviv";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+
+
+      function displayWeather(response) {
+        let header = document.querySelector("h1");
+        let temperature = Math.round(response.data.main.temp);
+        header.innerHTML = `today in ${cityName} ${temperature}`;
+      }
+      */
+    </script>
+  </body>
+</html>

@@ -134,6 +134,17 @@
         let message = `Your username is: ${usernameInput.value} 👩‍💻. Your e-mail is: ${emailInput.value}`;
         alert(message);
       }
+
+      // axios
+      let apiComments = 'https://jsonplaceholder.typicode.com/posts/1/comments';
+        axios.get(apiComments).then(displayComment);
+
+    function displayComment (response){
+    response.data.forEach(element => {
+                console.log(element.email);
+
+    });
+}
     </script>
   </body>
 </html>
