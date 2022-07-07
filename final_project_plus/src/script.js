@@ -206,7 +206,6 @@ function changeCity(event, units) {
   let inputCity = document.querySelector("#city-input");
   let cityName = inputCity.value;
   getWeather(cityName, units);
-    getParameters(cityName);
 }
 
 function getWeather(cityName, units) {
@@ -221,6 +220,7 @@ function getWeather(cityName, units) {
   } else {
     getWeatherC(cityName);
   }
+      getParameters(cityName);
 }
 
 
