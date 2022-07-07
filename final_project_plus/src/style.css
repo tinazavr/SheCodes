@@ -165,3 +165,6 @@ input[type="text"] {
   height: 112px;
   width: 90px;
 }
+h1::first-letter {
+  text-transform: uppercase;
+}
