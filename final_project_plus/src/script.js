@@ -193,7 +193,7 @@ function currentWeather(response, units) {
 
   nameCurrentCity.innerHTML = cityName;
   inputCity.value = cityName;
-  setWeather(cityName, units);
+  getWeather(cityName, units);
   getParameters(cityName);
 }
 
@@ -205,10 +205,11 @@ function changeCity(event, units) {
   event.preventDefault();
   let inputCity = document.querySelector("#city-input");
   let cityName = inputCity.value;
-  setWeather(cityName, units);
+  getWeather(cityName, units);
+    getParameters(cityName);
 }
 
-function setWeather(cityName, units) {
+function getWeather(cityName, units) {
   let h1CityName = document.querySelector("h1");
   if (cityName === "") {
     cityName = defaultCityName;
