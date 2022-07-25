@@ -206,6 +206,9 @@ linkDegreesC.addEventListener("click", changeCityForC);
 function changeCityForC(event) {
   //  let linkDegreesC = document.querySelector("#degrees-fahrenheit");
   changeCity(event, "C");
+  linkDegreesC.classList.add('active');
+    linkDegreesF.classList.remove("active");
+
 }
 
 // DEGREES  CELSIUS to FAHRENHEIT
@@ -215,4 +218,7 @@ linkDegreesF.addEventListener("click", changeCityForF);
 function changeCityForF(event) {
   // let linkDegreesF = document.querySelector("#degrees-fahrenheit");
   changeCity(event, "F");
+  linkDegreesF.classList.add("active");
+    linkDegreesC.classList.remove("active");
+
 }

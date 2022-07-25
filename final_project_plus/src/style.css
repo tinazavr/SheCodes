@@ -112,12 +112,8 @@ input[type="text"] {
 .converter-link {
   text-decoration: none;
   color: rgb(0, 0, 0);
-  opacity: 0.8;
 }
-.converter-link:hover {
-  opacity: 1;
-  font-weight: bold;
-}
+
 
 .week-weather {
   position: absolute;
