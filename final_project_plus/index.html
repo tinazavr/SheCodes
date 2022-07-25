@@ -95,25 +95,28 @@
             class="col-6 shadow-lg p-3 mb-5 bg-body rounded local-temperature"
           >
             <h1>Dniprorudne</h1>
-            <h2>Thusday, 14 Jun, 14:33 <span class="current-time"></span></h2>
+            <h2><span class='h2-text'>Updated at:</span> <span id="city-time"></span></h2>
             <div class="row">
               <div class="col-6">
                 <h3>
                   <span id="degrees">--</span>
-                  <a class="converter-link" id="degrees-celsius" href="#"
+                  <span class='choice-units'>
+                    <a class="converter-link active" id="degrees-celsius" href="#"
                     >&#8451;</a
                   >
-                  /
+                  |
                   <a class="converter-link" id="degrees-fahrenheit" href="#"
                     >&#8457;</a
                   >
+                  </span>
                 </h3>
               </div>
               <div class="col-6" id="main-stiker-icon">
                 <img
-                  src="img/partly_cloudy.png"
+                  src=""
                   alt="Partly_cloudy icon"
                   width="120px"
+                  id="main-icon"
                 />
               </div>
             </div>
@@ -122,10 +125,10 @@
             class="col-4 shadow-lg p-3 mb-5 bg-body rounded local-parameters"
           >
             <h5 id="precipitation"></h5>
-            <h5 id="wind">Wind: -- km/h</h5>
-            <h5 id="humidity">Humidity: --%</h5>
-            <h5 id="feels-like">Feels like: --&#8451;</h5>
-            <h5 id="description">--</h5>
+            <h5 >Wind: <span id="wind">--</span> km/h</h5>
+            <h5 >Humidity: <span id="humidity">--</span>%</h5>
+            <h5 >Feels like: <span id="feels-like">--</span>&#8451;</h5>
+            <h5 id="description"></h5>
           </div>
         </div>
       </section>

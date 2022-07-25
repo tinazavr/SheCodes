@@ -1,104 +1,5 @@
-let weather = [
-  //temperature in Celsius
-  {
-    name: "Pasadena",
-    tempC: 26.4,
-    humidity: 65,
-    wind: 22,
-  },
-
-  {
-    name: "Kyiv",
-    tempC: 22.75,
-    humidity: 51,
-    wind: 10,
-  },
-
-  {
-    name: "Polohy",
-    tempC: 16.34,
-    humidity: 30,
-    wind: 9,
-  },
-  {
-    name: "Zaporizhzhya",
-    tempC: 12.45,
-    humidity: 45,
-    wind: 6,
-  },
-
-  {
-    name: "Lviv",
-    tempC: 12.5,
-    humidity: 34,
-    wind: 12,
-  },
-  {
-    name: "Dniprorudne",
-    tempC: 29,
-    humidity: 76,
-    wind: 8,
-  },
-];
-
-/*
-function askCity() {
-  let cityName = prompt(`Enter a city: (It is can be only one of this cities: ${showCities(weather)}`);
-  checkCityName(cityName);
-}
-askCity();
-
-function showCities(weather){
-    let listOfCities =  weather.map((city) => city.name).join(', ');
-    return listOfCities;
-}
-
-
-function checkCityName(cityName) {
-  if (cityName.length >= 2 && isNaN(cityName)) {
-    findIn(cityName);
-  } else if (cityName === null || cityName === " ") {
-    alert("Please, enter name of a city.");
-    askCity();
-  } else {
-    alert("Sorry ☹️ something went wrong enter the city name again.");
-    askCity();
-  }
-}
-
-
-function findIn(cityName) {
-  for (let i = 0; i < weather.length; i++) {
-    if (cityName.toLowerCase() === weather[i].name.toLowerCase()) {
-      let userCity = weather[i];
-      roundedTemp(userCity);
-      return;
-    }
-  }
-  showLink(cityName);
-}
-
-function roundedTemp(userCity) {
-  let temperatureC = Math.round(userCity.tempC);
-  let temperatureF = Math.round(userCity.tempC * 1.8 + 32);
-  showWeather(userCity, temperatureC, temperatureF);
-}
-
-function showWeather(userCity, temperatureC, temperatureF) {
-  alert(
-    `It is currently ${temperatureC}°C (${temperatureF}°F) in ${userCity.name} with a humidity of ${userCity.humidity}% and a wind ${userCity.wind} km/h.`
-  );
-}
-
-function showLink(cityName) {
-  alert(
-    `Sorry, we don't know the weather for ${cityName} city, try going to https://www.google.com/search?q=weather+${cityName}.`
-  );
-}
-
-*/
 //DISPLAYING CURRENT DATE AND TIME
-let currentData = document.querySelector("h2");
+/*let currentData = document.querySelector("h2");
 currentData.innerHTML = getDate();
 
 function getDate() {
@@ -144,7 +45,7 @@ function getDate() {
   let today = `${month} ${date}, ${day}, ${hours}:${minutes}`;
   return today;
 }
-
+*/
 const defaultCityName = "Dniprorudne";
 //displaying default temparature value
 defaultCity();
@@ -167,6 +68,31 @@ function navCity(navCity1){
    getParameters(navCity1);
 }
 */
+
+function getDate(timestamp) {
+  let date = new Date(timestamp);
+
+  let dayOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = dayOfWeek[date.getDay()];
+  let hours = date.getHours();
+  if (hours <= 9) {
+    hours = "0" + hours;
+  }
+  let minutes = date.getMinutes();
+  if (minutes <= 9) {
+    minutes = "0" + minutes;
+  }
+ let today = `${day}, ${hours}:${minutes}`;
+   return today;
+}
 
 let currentCity = document.querySelector("#current-location-button");
 currentCity.addEventListener("click", currentCityWeather);
@@ -220,9 +146,8 @@ function getWeather(cityName, units) {
   } else {
     getWeatherC(cityName);
   }
-      getParameters(cityName);
+  getParameters(cityName);
 }
-
 
 function getParameters(cityName) {
   let apiKey = "80837f7b81708cf27e6991c6119a6e84";
@@ -236,17 +161,21 @@ function displayParameters(response) {
   let humidityH5 = document.querySelector("#humidity");
   let feelsLikeH5 = document.querySelector("#feels-like");
   let descriptionH5 = document.querySelector("#description");
+  let cityTime = document.querySelector("#city-time");
+  let mainIcon=document.querySelector("#main-icon");
   // let precipitation = Math.round(response.data.main);
   let wind = Math.round(response.data.wind.speed);
   let feelsLike = Math.round(response.data.main.feels_like);
   let humidity = Math.round(response.data.main.humidity);
   let description = response.data.weather[0].description;
-
+let weatherIcon = response.data.weather[0].icon;
   // precipitationH5.innerHTML = `Precipitation: ${precipitation}%`;
-  feelsLikeH5.innerHTML = `Feels like: ${feelsLike}&#8451;`;
-  windH5.innerHTML = `Wind: ${wind} km/h`;
-  humidityH5.innerHTML = `Humidity: ${humidity}%`;
-  descriptionH5.innerHTML = `${description}`;
+  feelsLikeH5.innerHTML = feelsLike;
+  windH5.innerHTML = wind;
+  humidityH5.innerHTML = humidity;
+  descriptionH5.innerHTML = description;
+  mainIcon.setAttribute("src", `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
+  cityTime.innerHTML = getDate(response.data.dt * 1000);
 }
 
 //GET AND SHOW WEATHER in C
