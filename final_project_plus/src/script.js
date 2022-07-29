@@ -90,8 +90,8 @@ function getDate(timestamp) {
   if (minutes <= 9) {
     minutes = "0" + minutes;
   }
- let today = `${day}, ${hours}:${minutes}`;
-   return today;
+  let today = `${day}, ${hours}:${minutes}`;
+  return today;
 }
 
 let currentCity = document.querySelector("#current-location-button");
@@ -162,19 +162,22 @@ function displayParameters(response) {
   let feelsLikeH5 = document.querySelector("#feels-like");
   let descriptionH5 = document.querySelector("#description");
   let cityTime = document.querySelector("#city-time");
-  let mainIcon=document.querySelector("#main-icon");
+  let mainIcon = document.querySelector("#main-icon");
   // let precipitation = Math.round(response.data.main);
   let wind = Math.round(response.data.wind.speed);
   let feelsLike = Math.round(response.data.main.feels_like);
   let humidity = Math.round(response.data.main.humidity);
   let description = response.data.weather[0].description;
-let weatherIcon = response.data.weather[0].icon;
+  let weatherIcon = response.data.weather[0].icon;
   // precipitationH5.innerHTML = `Precipitation: ${precipitation}%`;
   feelsLikeH5.innerHTML = feelsLike;
   windH5.innerHTML = wind;
   humidityH5.innerHTML = humidity;
   descriptionH5.innerHTML = description;
-  mainIcon.setAttribute("src", `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
+  mainIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+  );
   cityTime.innerHTML = getDate(response.data.dt * 1000);
 }
 
@@ -206,9 +209,8 @@ linkDegreesC.addEventListener("click", changeCityForC);
 function changeCityForC(event) {
   //  let linkDegreesC = document.querySelector("#degrees-fahrenheit");
   changeCity(event, "C");
-  linkDegreesC.classList.add('active');
-    linkDegreesF.classList.remove("active");
-
+  linkDegreesC.classList.add("active");
+  linkDegreesF.classList.remove("active");
 }
 
 // DEGREES  CELSIUS to FAHRENHEIT
@@ -219,7 +221,41 @@ function changeCityForF(event) {
   // let linkDegreesF = document.querySelector("#degrees-fahrenheit");
   changeCity(event, "F");
   linkDegreesF.classList.add("active");
-    linkDegreesC.classList.remove("active");
-
+  linkDegreesC.classList.remove("active");
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let day = ["Monday", "Thusday", "Wednesday", "Thursday", "Friday"];
+let minTemperature = [5, 6, 7, 8, 9,9 ];
+
+  let forecastHTML = "";
+
+  forecastHTML = `<div class="row week-weather">`;
+
+  day.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2" id="day1">
+      ${day}
+
+      <div class="week-stiker">
+        <img
+          src="img/rain_light.png"
+          alt="Rain light icon"
+          width="60px"
+        />
+      </div>
+      <div class="weather-forecast-temperature">
+        <span class="temperature-max">16 &#176; </span>
+      <span class="temperature-min">12 &#176;</span>
+      </div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+showForecast();
