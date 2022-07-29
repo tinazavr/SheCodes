@@ -111,9 +111,7 @@ input[type="text"] {
 
 .converter-link {
   text-decoration: none;
-  color: rgb(0, 0, 0);
 }
-
 
 .week-weather {
   position: absolute;
@@ -171,18 +169,28 @@ h1::first-letter {
 .footer-container a {
   text-decoration: none;
 }
-#degrees{
-      font-size: 56px;
+#degrees {
+  font-size: 56px;
 }
-.choice-units{
-      vertical-align: top;
+.choice-units {
+  vertical-align: top;
 }
-.choice-units .active{
-cursor: default;
+.choice-units .active {
+  cursor: default;
   color: rgb(0, 0, 0);
 }
 
-.choice-units .active:hover{
+.choice-units .active:hover {
   text-decoration: none;
+}
 
+.temperature-min {
+  padding-left: 8px;
+  opacity: 0.6;
+}
+.temperature-max {
+  padding-right: 8px;
+}
+.weather-forecast-temperature {
+  color: black;
 }

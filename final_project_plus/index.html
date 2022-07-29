@@ -62,7 +62,7 @@
                 type="search"
                 class="form-control shadow-lg p-3 mb-5 bg-body rounded"
                 id="city-input"
-                autocomblete='off'
+                autocomblete="off"
                 aria-describedby="emailHelp"
                 placeholder="The weather in which city you would like to know?"
               />
@@ -95,19 +95,25 @@
             class="col-6 shadow-lg p-3 mb-5 bg-body rounded local-temperature"
           >
             <h1>Dniprorudne</h1>
-            <h2><span class='h2-text'>Updated at:</span> <span id="city-time"></span></h2>
+            <h2>
+              <span class="h2-text">Updated at:</span>
+              <span id="city-time"></span>
+            </h2>
             <div class="row">
               <div class="col-6">
                 <h3>
                   <span id="degrees">--</span>
-                  <span class='choice-units'>
-                    <a class="converter-link active" id="degrees-celsius" href="#"
-                    >&#8451;</a
-                  >
-                  |
-                  <a class="converter-link" id="degrees-fahrenheit" href="#"
-                    >&#8457;</a
-                  >
+                  <span class="choice-units">
+                    <a
+                      class="converter-link active"
+                      id="degrees-celsius"
+                      href="#"
+                      >&#8451;</a
+                    >
+                    |
+                    <a class="converter-link" id="degrees-fahrenheit" href="#"
+                      >&#8457;</a
+                    >
                   </span>
                 </h3>
               </div>
@@ -125,9 +131,9 @@
             class="col-4 shadow-lg p-3 mb-5 bg-body rounded local-parameters"
           >
             <h5 id="precipitation"></h5>
-            <h5 >Wind: <span id="wind">--</span> km/h</h5>
-            <h5 >Humidity: <span id="humidity">--</span>%</h5>
-            <h5 >Feels like: <span id="feels-like">--</span>&#8451;</h5>
+            <h5>Wind: <span id="wind">--</span> km/h</h5>
+            <h5>Humidity: <span id="humidity">--</span>%</h5>
+            <h5>Feels like: <span id="feels-like">--</span>&#8451;</h5>
             <h5 id="description"></h5>
           </div>
         </div>
@@ -136,7 +142,7 @@
         <div class="row week-weather">
           <div class="col-2" id="day1">
             Monday
-            <h5>16 &#176;</h5>
+
             <div class="week-stiker">
               <img
                 src="img/rain_light.png"
@@ -144,7 +150,12 @@
                 width="60px"
               />
             </div>
+           <div class="weather-forecast-temperature">
+              <span class="temperature-max">16 &#176; </span>
+            <span class="temperature-min">12 &#176;</span>
+           </div>
           </div>
+           <!-- 
           <div class="col-2">
             Thusday
             <h5>15 &#176;</h5>
@@ -175,7 +186,7 @@
               width="60px"
             />
           </div>
-          <!-- <div class="col-2">
+         <div class="col-2">
             Saturday
             <h5>18 &#176;</h5>
             <img src="img/partly_cloudy.png" alt="sun" width="60px" />
@@ -184,15 +195,17 @@
       </section>
       <footer class="footer-container">
         <span
-          >This project was coded by <a
+          >This project was coded by
+          <a
             href="https://www.linkedin.com/in/anastasiia-zavorotynska-849972133/"
             target="blank_"
             >Anastasiia Zavorotynska </a
-          >and is <a
+          >and is
+          <a
             target="blank_"
             href="https://github.com/tinazavr/SheCodes/tree/main/final_project_plus"
             >open-sourced on GitHub </a
-          >and 
+          >and
           <a href="https://app.netlify.com/" target="blank_"
             >hosted on Netlify</a
           ></span

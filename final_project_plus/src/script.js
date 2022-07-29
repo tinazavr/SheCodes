@@ -222,3 +222,4 @@ function changeCityForF(event) {
     linkDegreesC.classList.remove("active");
 
 }
+
