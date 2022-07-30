@@ -179,7 +179,17 @@ function displayParameters(response) {
     `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
   );
   cityTime.innerHTML = getDate(response.data.dt * 1000);
+  getForecast(response.data.coord);
 }
+
+function getForecast(coordinates){
+  let apiKey = "80837f7b81708cf27e6991c6119a6e84";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+axios.get(apiUrl).then(showForecast);
+}
+
+
 
 //GET AND SHOW WEATHER in C
 function getWeatherC(cityName) {
@@ -224,12 +234,12 @@ function changeCityForF(event) {
   linkDegreesC.classList.remove("active");
 }
 
-function showForecast() {
+function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let day = ["Monday", "Thusday", "Wednesday", "Thursday", "Friday"];
-let minTemperature = [5, 6, 7, 8, 9,9 ];
-
+  let minTemperature = [5, 6, 7, 8, 9, 9];
+let maxTemperature = response.data.daily[1].temp.max;
   let forecastHTML = "";
 
   forecastHTML = `<div class="row week-weather">`;
@@ -249,7 +259,7 @@ let minTemperature = [5, 6, 7, 8, 9,9 ];
         />
       </div>
       <div class="weather-forecast-temperature">
-        <span class="temperature-max">16 &#176; </span>
+        <span class="temperature-max">${maxTemperature} &#176; </span>
       <span class="temperature-min">12 &#176;</span>
       </div>
       </div>`;
