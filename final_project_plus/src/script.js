@@ -182,14 +182,11 @@ function displayParameters(response) {
   getForecast(response.data.coord);
 }
 
-function getForecast(coordinates){
+function getForecast(coordinates) {
   let apiKey = "80837f7b81708cf27e6991c6119a6e84";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-axios.get(apiUrl).then(showForecast);
+  axios.get(apiUrl).then(showForecast);
 }
-
-
 
 //GET AND SHOW WEATHER in C
 function getWeatherC(cityName) {
@@ -234,33 +231,53 @@ function changeCityForF(event) {
   linkDegreesC.classList.remove("active");
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  day = day + 1;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
-  let day = ["Monday", "Thusday", "Wednesday", "Thursday", "Friday"];
-  let minTemperature = [5, 6, 7, 8, 9, 9];
-let maxTemperature = response.data.daily[1].temp.max;
+  let forecastArray = response.data.daily;
   let forecastHTML = "";
 
   forecastHTML = `<div class="row week-weather">`;
 
-  day.forEach(function (day) {
+  forecastArray.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
     <div class="col-2" id="day1">
-      ${day}
+      ${formatDay(forecastDay.dt)}
 
       <div class="week-stiker">
         <img
-          src="img/rain_light.png"
-          alt="Rain light icon"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt="Weather icon"
           width="60px"
         />
       </div>
       <div class="weather-forecast-temperature">
-        <span class="temperature-max">${maxTemperature} &#176; </span>
-      <span class="temperature-min">12 &#176;</span>
+        <span class="temperature-max">${Math.round(
+          forecastDay.temp.max
+        )} &#176; </span>
+      <span class="temperature-min">${Math.round(
+        forecastDay.temp.min
+      )} &#176;</span>
       </div>
       </div>`;
   });
@@ -268,4 +285,4 @@ let maxTemperature = response.data.daily[1].temp.max;
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-showForecast();
+// showForecast();
