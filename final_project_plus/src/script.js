@@ -255,7 +255,9 @@ function showForecast(response) {
 
   forecastHTML = `<div class="row week-weather">`;
 
-  forecastArray.forEach(function (forecastDay) {
+  forecastArray.forEach(function (forecastDay, index) {
+
+    if(index<5){
     forecastHTML =
       forecastHTML +
       `
@@ -280,6 +282,7 @@ function showForecast(response) {
       )} &#176;</span>
       </div>
       </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
