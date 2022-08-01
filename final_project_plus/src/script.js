@@ -46,6 +46,15 @@ function getDate() {
   return today;
 }
 */
+
+let citiesArray = [
+  "Mariupol",
+  "Olenivka",
+  "Bucha",
+  "Energodar",
+  "Vasylivka",
+  "Polohy",
+];
 const defaultCityName = "Dniprorudne";
 //displaying default temparature value
 defaultCity();
@@ -256,11 +265,10 @@ function showForecast(response) {
   forecastHTML = `<div class="row week-weather">`;
 
   forecastArray.forEach(function (forecastDay, index) {
-
-    if(index<5){
-    forecastHTML =
-      forecastHTML +
-      `
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-2" id="day1">
       ${formatDay(forecastDay.dt)}
 
@@ -288,4 +296,27 @@ function showForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-// showForecast();
+
+function navCity1() {
+  let city = document.querySelector("#nav-city-1");
+  city.addEventListener("click", navCity);
+}
+
+function navCity(event) {
+  event.preventDefault();
+
+  getWeather("Mariupol", 'C');
+}
+
+navCity1(citiesArray);
+/*
+
+function navCities(navArray) {
+  navArray.forEach(function displayCities{
+    let cityNameElement = document.querySelector('#')
+  });
+
+}
+
+navCities(citiesArray);
+*/
