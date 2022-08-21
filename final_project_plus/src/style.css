@@ -142,8 +142,6 @@ input[type="text"] {
   opacity: 1;
 }
 
-.week-stiker-icon {
-}
 
 #description::first-letter {
   text-transform: uppercase;
@@ -163,7 +161,7 @@ h1::first-letter {
 }
 .footer-container {
   position: fixed;
-  bottom: 50px;
+  bottom: 30px;
   left: 30px;
 }
 .footer-container a {
