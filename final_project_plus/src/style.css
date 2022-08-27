@@ -14,7 +14,7 @@
   border-radius: 8px;
   min-width: 800px;
   max-width: 900px;
-  min-height: 590px;
+  min-height: 630px;
 }
 
 .nav-menu {
@@ -161,7 +161,7 @@ h1::first-letter {
 }
 .footer-container {
   position: fixed;
-  bottom: 30px;
+  bottom: 10px;
   left: 30px;
 }
 .footer-container a {
